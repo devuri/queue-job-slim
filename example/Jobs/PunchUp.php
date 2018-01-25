@@ -2,7 +2,9 @@
 
 namespace Example\Jobs;
 
-class PunchUp
+use RodrigoIII\JobInterface;
+
+class PunchUp implements JobInterface
 {
     public function process()
     {
