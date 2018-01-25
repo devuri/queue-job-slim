@@ -1,0 +1,26 @@
+{
+    "name": "rodrigoiii/queue-job-slim",
+    "description": "Queue Job for slim",
+    "version": "0.1",
+    "type": "library",
+    "keywords": ["queue", "job", "slim", "library"],
+    "license": "MIT",
+    "minimum-stability": "alpha",
+    "authors": [
+        {
+            "name": "rodz3rd2",
+            "email": "rodrigogalura3rd@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.6.30 || ^7.0",
+        "pda/pheanstalk": "^3.1",
+        "slim/slim": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "RodrigoIII\\": "src/",
+            "Utilities\\": "utilities/"
+        }
+    }
+}
