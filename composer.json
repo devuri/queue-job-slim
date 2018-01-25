@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RodrigoIII\\": "src/",
+            "RodrigoIII\\QueueJob\\": "src/",
             "Utilities\\": "utilities/"
         }
     }

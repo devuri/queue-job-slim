@@ -10,5 +10,5 @@ $test_tubes = array_map(function ($job){
     return basename($job, ".php");
 }, $jobs);
 
-$queue = new RodrigoIII\Worker("127.0.0.1");
+$queue = new RodrigoIII\QueueJob\Worker("127.0.0.1");
 $queue->listen($test_tubes);

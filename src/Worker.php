@@ -1,6 +1,6 @@
 <?php
 
-namespace RodrigoIII;
+namespace RodrigoIII\QueueJob;
 
 use Pheanstalk\Pheanstalk;
 use Utilities\Console;

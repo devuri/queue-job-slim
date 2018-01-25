@@ -19,8 +19,8 @@ $container = $app->getContainer();
 
 $app->get('/test', function ()
 {
-    new RodrigoIII\Producer("PunchDown");
-    new RodrigoIII\Producer("PunchUp");
+    new RodrigoIII\QueueJob\Producer("PunchDown");
+    new RodrigoIII\QueueJob\Producer("PunchUp");
 });
 
 $app->run();

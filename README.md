@@ -11,7 +11,7 @@ Create file `server.php` or any name do you want and include the `autoload.php` 
 Instantiate your worker and put the host.
 
 ```php
-$queue = new RodrigoIII\Worker("127.0.0.1");
+$queue = new RodrigoIII\QueueJob\Worker("127.0.0.1");
 ```
 
 Then put your jobs to watch it.
@@ -46,8 +46,8 @@ And then produce what job you want to process.
 ```php
 $app->get('/test', function ()
 {
-    new RodrigoIII\Producer("PunchDown"); // Call the PunchDown job
-    new RodrigoIII\Producer("PunchUp"); // Call the PunchUp job
+    new RodrigoIII\QueueJob\Producer("PunchDown"); // Call the PunchDown job
+    new RodrigoIII\QueueJob\Producer("PunchUp"); // Call the PunchUp job
 });
 
 $app->run();

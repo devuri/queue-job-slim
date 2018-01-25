@@ -2,7 +2,7 @@
 
 namespace Example\Jobs;
 
-use RodrigoIII\JobInterface;
+use RodrigoIII\QueueJob\JobInterface;
 
 class PunchDown implements JobInterface
 {
