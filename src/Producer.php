@@ -1,6 +1,6 @@
 <?php
 
-namespace RodrigoIII\QueueJob;
+namespace QueueJobSlim;
 
 use Pheanstalk\Pheanstalk;
 

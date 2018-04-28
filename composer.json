@@ -21,8 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RodrigoIII\\QueueJob\\": "src/",
-            "Utilities\\": "utilities/"
+            "QueueJobSlim\\": "src/"
         }
     }
 }

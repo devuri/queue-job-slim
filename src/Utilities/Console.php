@@ -1,6 +1,6 @@
 <?php
 
-namespace Utilities;
+namespace QueueJobSlim\Utilities;
 
 /**
  * PHP Colored CLI
