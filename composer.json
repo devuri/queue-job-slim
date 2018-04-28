@@ -14,8 +14,10 @@
     ],
     "require": {
         "php": "^5.6.30 || ^7.0",
-        "pda/pheanstalk": "^3.1",
-        "slim/slim": "^3.9"
+        "pda/pheanstalk": "^3.1"
+    },
+    "suggest": {
+        "slim/slim": "Require to integrate in slim"
     },
     "autoload": {
         "psr-4": {
