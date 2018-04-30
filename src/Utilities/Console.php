@@ -5,7 +5,7 @@ namespace QueueJobSlim\Utilities;
 /**
  * PHP Colored CLI
  * Used to log strings with custom colors to console using php
- * 
+ *
  * Copyright (C) 2013 Sallar Kaboli <sallar.kaboli@gmail.com>
  * MIT Liencesed
  * http://opensource.org/licenses/MIT
@@ -14,7 +14,7 @@ namespace QueueJobSlim\Utilities;
  * (C) Jesse Donat https://github.com/donatj
  */
 class Console {
- 
+
     static $foreground_colors = array(
         'bold'         => '1',    'dim'          => '2',
         'black'        => '0;30', 'dark_gray'    => '1;30',
@@ -27,16 +27,16 @@ class Console {
         'light_gray'   => '0;37', 'white'        => '1;37',
         'normal'       => '0;39',
     );
-    
+
     static $background_colors = array(
         'black'        => '40',   'red'          => '41',
         'green'        => '42',   'yellow'       => '43',
         'blue'         => '44',   'magenta'      => '45',
         'cyan'         => '46',   'light_gray'   => '47',
     );
- 
+
     static $options = array(
-        'underline'    => '4',    'blink'         => '5', 
+        'underline'    => '4',    'blink'         => '5',
         'reverse'      => '7',    'hidden'        => '8',
     );
 
@@ -66,14 +66,14 @@ class Console {
 
         echo self::$color($str, $background_color);
     }
-    
+
     /**
      * Anything below this point (and its related variables):
      * Colored CLI Output is: (C) Jesse Donat
      * https://gist.github.com/donatj/1315354
      * -------------------------------------------------------------
      */
-    
+
     /**
      * Catches static calls (Wildcard)
      * @param  string $foreground_color Text Color
@@ -84,7 +84,7 @@ class Console {
     {
         $string         = $args[0];
         $colored_string = "";
- 
+
         // Check if given foreground color found
         if( isset(self::$foreground_colors[$foreground_color]) ) {
             $colored_string .= "\033[" . self::$foreground_colors[$foreground_color] . "m";
@@ -92,7 +92,7 @@ class Console {
         else{
             die( $foreground_color . ' not a valid color');
         }
-        
+
         array_shift($args);
 
         foreach( $args as $option ){
@@ -104,14 +104,14 @@ class Console {
                 $colored_string .= "\033[" . self::$options[$option] . "m";
             }
         }
-        
+
         // Add string and end coloring
         $colored_string .= $string . "\033[0m";
-        
+
         return $colored_string;
-        
+
     }
- 
+
     /**
      * Plays a bell sound in console (if available)
      * @param  integer $count Bell play count
@@ -120,5 +120,5 @@ class Console {
     public static function bell($count = 1) {
         echo str_repeat("\007", $count);
     }
- 
+
 }
