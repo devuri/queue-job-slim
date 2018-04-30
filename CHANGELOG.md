@@ -1,2 +1,2 @@
-# Queue Job Slim (v1.0)
+# Queue Job Slim (v1.1)
 * Initial release
