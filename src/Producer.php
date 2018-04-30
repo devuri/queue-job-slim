@@ -6,18 +6,15 @@ use Pheanstalk\Pheanstalk;
 
 class Producer
 {
-    public function __construct($test_tube)
+    public static function send($job, $params = [])
     {
         global $container;
-
         $queue_job = $container['settings']['queue-job'];
+        $host = $queue_job['host'];
 
-        $this->pheanstalk = new Pheanstalk($queue_job['host']);
-        $this->send($test_tube, "\\{$queue_job['job_namespace']}\\$test_tube");
-    }
+        $class = "\\{$queue_job['job_namespace']}\\{$job}";
 
-    public function send($test_tube, $job_class)
-    {
-        $this->pheanstalk->useTube($test_tube)->put($job_class);
+        $pheanstalk = new Pheanstalk($host);
+        $pheanstalk->useTube($job)->put(json_encode(compact('class', 'params')));
     }
 }

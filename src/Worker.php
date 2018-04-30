@@ -31,11 +31,16 @@ class Worker
         {
             echo Console::yellow("Processing ...") . PHP_EOL;
 
-            $class = $job->getData();
+            $data = json_decode($job->getData());
+
+            $class = $data->class;
+            $params = $data->params;
+
             if (class_exists($class))
             {
-                $job_class = new $class;
-                $job_class->process();
+                $job_reflection_class = new \ReflectionClass($class);
+                $class_instance = $job_reflection_class->newInstanceArgs($params);
+                $class_instance->handle();
             }
             else
             {

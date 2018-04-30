@@ -46,8 +46,8 @@ And then produce what job you want to process.
 ```php
 $app->get('/test', function ()
 {
-    new QueueJobSlim\Producer("PunchDown"); // Call the PunchDown job
-    new QueueJobSlim\Producer("PunchUp"); // Call the PunchUp job
+    QueueJobSlim\Producer::send("PunchDown"); // Call the PunchDown job
+    QueueJobSlim\Producer::send("PunchUp", ["ouch"]); // Call the PunchUp job with argument "ouch"
 });
 
 $app->run();
