@@ -40,7 +40,10 @@ class Worker
             {
                 $job_reflection_class = new \ReflectionClass($class);
                 $class_instance = $job_reflection_class->newInstanceArgs($params);
+
+                $class_instance->before();
                 $class_instance->handle();
+                $class_instance->after();
             }
             else
             {
