@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b16cfb7e3404098bf73b37898838291",
+    "content-hash": "2492d8eca274585e893bbf08947ad0d9",
     "packages": [
         {
             "name": "pda/pheanstalk",
@@ -64,7 +64,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.6.30 || ^7.0"
+        "php": "^5.6.30 || ^7.0 || ^7.1"
     },
     "platform-dev": []
 }

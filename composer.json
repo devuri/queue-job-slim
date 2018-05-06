@@ -8,20 +8,25 @@
     "minimum-stability": "alpha",
     "authors": [
         {
-            "name": "rodz3rd2",
+            "name": "Rodrigo Galura III",
             "email": "rodrigogalura3rd@gmail.com"
         }
     ],
     "require": {
-        "php": "^5.6.30 || ^7.0",
+        "php": "^5.6.30 || ^7.0 || ^7.1",
         "pda/pheanstalk": "^3.1"
-    },
-    "suggest": {
-        "slim/slim": "Require to integrate in slim"
     },
     "autoload": {
         "psr-4": {
             "QueueJobSlim\\": "src/"
         }
+    },
+    "suggest": {
+        "slim/slim": "Require to integrate in slim"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "php": "5.6.30"
     }
 }
